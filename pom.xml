@@ -4,7 +4,7 @@
 
     <groupId>com.github.zington</groupId>
     <artifactId>ParallelJUnit</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <url>https://github.com/zington/ParallelJUnit</url>
@@ -12,8 +12,8 @@
     <description>This makes it possible to easy run your regular unit tests as performance tests.</description>
 
     <scm>
-        <connection>scm:git:http://github.com/kejsardamberg/ParallelJUnit.git</connection>
-        <url>https://github.com/kejsardamberg/ParallelJUnit</url>
+        <connection>scm:git:http://github.com/zington/ParallelJUnit.git</connection>
+        <url>https://github.com/zington/ParallelJUnit</url>
         <tag>ParallelJUnit-2.0.0</tag>
     </scm>
 
