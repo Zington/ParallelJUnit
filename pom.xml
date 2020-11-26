@@ -14,7 +14,7 @@
     <scm>
         <connection>scm:git:http://github.com/kejsardamberg/ParallelJUnit.git</connection>
         <url>https://github.com/kejsardamberg/ParallelJUnit</url>
-        <tag>ParallelJUnit-1.0</tag>
+        <tag>ParallelJUnit-2.0.0</tag>
     </scm>
 
     <distributionManagement>
