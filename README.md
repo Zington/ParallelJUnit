@@ -8,6 +8,7 @@ Full-fledged performance tests with a generated distributed load upon a system i
 This enables easy response time assertions over multi-thread tests. 
 
 For **jar download** look here: http://damberg.one/alster/work/paralleljunit/index.html.
+
 For the **C#/.NET** equivalent, look here: https://dev.azure.com/zington/ParallelMsTest
 
 ## What it is
@@ -85,7 +86,7 @@ While the @ConcurrencyTest annotation runs the same method in parallel:
 ## ParallelizationTest
 A variant of **ConcurrencyTest** is testing if a tested method seem to be able to handle sequential execution or truly parallel execution. In order to do this in an easy fashion the **@ParallelizationTest** is used. It executes the test method in a single thread first (to avoid first execution initialization problems), then clocks how log the execution of the test method takes with execution with one thread. After this the same method is executed in multiple parallel threads to see if this takes significantly longer than the execution in a single thread. 
 
-![ParallelizationTest explained](http://damberg.one/alster/work/paralleljunit/javaparellelizationtest.JPG)
+![ParallelizationTest explained](http://damberg.one/alster/work/paralleljunit/javaparallelizationtest.JPG)
 
 To summarize the execution sequence:
 1. Executing once in one thread as a warm-up (populating caches, ready-compiling components and so forth)
@@ -113,7 +114,7 @@ This annotation is for performance testing closer to LoadRunner/JMeter or equiva
 The unit test method runs in concurrent parallel threads as with the other test types in this library, and the execution time for each individual method execution (for each iteration) can be assessed towards a set threshold.
 Using this test type the thread pool used is filled up again with a new execution when a test method execution is finished.
 
-![LoadTest explained](http://damberg.one/alster/work/paralleljunit/javaloadtest.jpg)
+![LoadTest explained](http://damberg.one/alster/work/paralleljunit/javaloadtest.JPG)
 
 ### Examples
 
