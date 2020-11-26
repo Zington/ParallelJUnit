@@ -12,7 +12,7 @@ For **jar download** and references to the **C#/.NET** equivalent, look here: ht
 ## What it is
 It's a custom JUnit test runner that enables executing JUnit test methods in concurrent parallels threads by complimenting JUnit with the use of the *@Test* alternative annotations:
 
-*@ParallelTest* 
+*@ConccurrencyTest* 
 
 *@ParallelizationTest*
 
@@ -22,17 +22,17 @@ It's a custom JUnit test runner that enables executing JUnit test methods in con
 Add the following dependency to your maven pom file:
 
     <dependency>
-      <groupId>com.github.claremontqualitymanagement</groupId>
+      <groupId>com.github.zington</groupId>
       <artifactId>ParallelJUnit</artifactId>
-      <version>1.0.2</version>
+      <version>2.0.0</version>
     </dependency>
 
 Or download it as a jar from the link above - or clone this repository and compile it yourself.
 
-## ParallelTest annotation
-The **@ParallelTest** is used instead of the **@Test** annotation of regular JUnit. When the **@ParallelTest** is used the test method is executed concurrently in multiple threads. The number of concurrent threads may be set by the **threadCount** argument. Default **threadCount** for ParallelTest is 2.
+## ConcurrencyTest annotation
+The **@ConcurrencyTest** is used instead of the **@Test** annotation of regular JUnit. When the **@ConcurrencyTest** is used the test method is executed concurrently in multiple threads. The number of concurrent threads may be set by the **threadCount** argument. Default **threadCount** for ConcurrencyTest is 2.
 
-Regular JUnit **@Test** optional arguments **timeout** and **expected** applies for **@ParallelTest** too.
+Regular JUnit **@Test** optional arguments **timeout** and **expected** applies for **@ConcurrencyTest** too.
 
 ![Screenshot](http://damberg.one/alster/work/paralleljunit/parelleltest.JPG)
 
@@ -54,7 +54,7 @@ Regular JUnit **@Test** optional arguments **timeout** and **expected** applies 
        }
        
        //Four parallel concurrent threads, passing timeout (ms)
-       @ParallelTest(threadCount = 4, timeout = 200) 
+       @ConcurrencyTest(threadCount = 4, timeout = 200) 
        public void parallelTestShouldPass() throws InterruptedException {
            Assert.assertTrue(true);
            Thread.sleep(100);
@@ -62,7 +62,7 @@ Regular JUnit **@Test** optional arguments **timeout** and **expected** applies 
        }
 
        //Bad test case since it's fuzzy. Ten parallel threads. Expecting some threads to throw exceptions.
-       @ParallelTest(threadCount = 10, expected = TestMethodExecutionException.class)  
+       @ConcurrencyTest(threadCount = 10, expected = TestMethodExecutionException.class)  
        public void exceptionThrowingTestMethodShouldThrowException() throws Exception {
            Assert.assertTrue(true);
            if(Math.random() * 100 < 50){
@@ -76,7 +76,7 @@ Regular JUnit **@Test** optional arguments **timeout** and **expected** applies 
 
 
 ## ParallelizationTest
-A variant of **ParallelTest** is testing if a tested method seem to be able to handle sequential execution or truly parallel execution. In order to do this in an easy fashion the **@ParallelizationTest** is used. It executes the test method in a single thread first (to avoid first execution initialization problems), then clocks how log the execution of the test method takes with execution with one thread. After this the same method is executed in multiple parallel threads to see if this takes significantly longer than the execution in a single thread. 
+A variant of **ConcurrencyTest** is testing if a tested method seem to be able to handle sequential execution or truly parallel execution. In order to do this in an easy fashion the **@ParallelizationTest** is used. It executes the test method in a single thread first (to avoid first execution initialization problems), then clocks how log the execution of the test method takes with execution with one thread. After this the same method is executed in multiple parallel threads to see if this takes significantly longer than the execution in a single thread. 
 
 ![Screenshot](http://damberg.one/alster/work/paralleljunit/parellelizationtest.JPG)
 
