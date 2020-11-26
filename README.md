@@ -12,7 +12,7 @@ For **jar download** and references to the **C#/.NET** equivalent, look here: ht
 ## What it is
 It's a custom JUnit test runner that enables executing JUnit test methods in concurrent parallels threads by complimenting JUnit with the use of the *@Test* alternative annotations:
 
-*@ConccurrencyTest* 
+*@ConcurrencyTest* 
 
 *@ParallelizationTest*
 
